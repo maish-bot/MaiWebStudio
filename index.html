@@ -678,17 +678,27 @@
       document.getElementById('calc-bar-total').textContent=gbp(total);
       document.getElementById('calc-monthly').classList.toggle('hidden',!care);
       document.getElementById('calc-bar-monthly').classList.toggle('hidden',!care);
-      var summary=lines.map(function(l){return l[0]+(l[1]?' ('+gbp(l[1])+')':'');}).join(', ')+' = '+gbp(total)+(care?' + £50/month maintenance':'');
+      var parts=lines.map(function(l){return l[0]+' '+(l[1]?gbp(l[1]):'included');});
+      var summary=gbp(total)+(care?' + £50/month':'')+' ('+parts.join(' + ')+(care?' + Maintenance & hosting £50/month':'')+')';
       f.dataset.route=custom?'Custom website - from £300':'Template - from £200';
       // Always keep the booking form's hidden estimate in sync
       estimate.value=summary;
-      note.textContent='Your price from the calculator: '+summary;
-      if(touched) note.classList.remove('hidden');
+      note.textContent='Your estimate: '+summary;
+      note.classList.toggle('hidden',!touched);
     }
-    f.addEventListener('change',function(){touched=true;update();}); update();
+    var pkg=document.getElementById('b-package');
+    function setRoute(r){var el=f.querySelector('input[name=route][value='+r+']'); if(el){el.checked=true;} touched=true; update();}
+    // Calculator changes keep "What do you need?" in step
+    f.addEventListener('change',function(){touched=true;update(); if(pkg&&/^(Template|Custom)/.test(pkg.value)) pkg.value=f.dataset.route;}); update();
+    // ...and changing "What do you need?" (or "Use this template") updates the estimate
+    if(pkg) pkg.addEventListener('change',function(){
+      if(/^Template/.test(pkg.value)) setRoute('template');
+      else if(/^Custom/.test(pkg.value)) setRoute('custom');
+      else { estimate.value=pkg.value==='Not sure yet'?'':'£50/month (Maintenance & hosting)'; note.textContent=estimate.value?'Your estimate: '+estimate.value:''; note.classList.toggle('hidden',!estimate.value); }
+    });
     function toBooking(){
       touched=true; update();
-      var sel=document.getElementById('b-package'); if(sel) sel.value=f.dataset.route;
+      if(pkg) pkg.value=f.dataset.route;
     }
     document.getElementById('calc-book').addEventListener('click',toBooking);
     document.getElementById('calc-bar-book').addEventListener('click',toBooking);
@@ -711,7 +721,7 @@
   document.querySelectorAll('a[data-package]').forEach(function(a){
     a.addEventListener('click',function(){
       var sel=document.getElementById('b-package');
-      if(sel){sel.value=a.dataset.package;sel.classList.add('ring-2','ring-purple-500');setTimeout(function(){sel.classList.remove('ring-2','ring-purple-500');},2000);}
+      if(sel){sel.value=a.dataset.package;sel.dispatchEvent(new Event('change'));sel.classList.add('ring-2','ring-purple-500');setTimeout(function(){sel.classList.remove('ring-2','ring-purple-500');},2000);}
     });
   });
 
@@ -720,7 +730,7 @@
     a.addEventListener('click',function(){
       var t=document.getElementById('b-template'), p=document.getElementById('b-package');
       if(t){t.value=a.dataset.template;t.classList.add('ring-2','ring-purple-500');setTimeout(function(){t.classList.remove('ring-2','ring-purple-500');},2000);}
-      if(p) p.value='Template - from £200';
+      if(p){p.value='Template - from £200'; p.dispatchEvent(new Event('change'));}
     });
   });
   (function(){
