@@ -185,7 +185,7 @@
   {"@context":"https://schema.org","@type":"ProfessionalService","name":"MaiWebStudio","url":"https://[YOUR LIVE DOMAIN]/","image":"https://[YOUR LIVE DOMAIN]/og-image.jpg",
    "description":"Modern, fast, mobile-responsive websites for barbers, plumbers, personal trainers and small businesses.",
    "areaServed":{"@type":"City","name":"Birmingham"},"priceRange":"£200–£500",
-   "sameAs":["https://instagram.com/MaiWebStudio"],
+   "sameAs":["https://instagram.com/maiwebstudio"],"telephone":"+447810073556","email":"mtechsecure81@gmail.com",
    "makesOffer":[
      {"@type":"Offer","name":"Website from a template, customised with your branding","price":"200","priceCurrency":"GBP"},
      {"@type":"Offer","name":"Custom website designed from scratch","price":"300","priceCurrency":"GBP"},
@@ -451,9 +451,9 @@
           <span class="font-semibold text-purple-700 dark:text-purple-300 whitespace-nowrap">+£100</span>
         </label>
         <label class="flex items-start gap-3 p-4 rounded-xl border border-purple-200 dark:border-purple-900/60 bg-white dark:bg-[#0d0b12] cursor-pointer transition hover:border-brand-purple has-[:checked]:border-brand-purple has-[:checked]:bg-purple-50 dark:has-[:checked]:bg-purple-950/40 has-[:focus-visible]:ring-2 has-[:focus-visible]:ring-purple-500">
-          <input type="radio" name="pages" value="6-10" data-price="150" data-label="6–10 pages" class="mt-1 accent-purple-600">
+          <input type="radio" name="pages" value="6-10" data-price="200" data-label="6–10 pages" class="mt-1 accent-purple-600">
           <span class="flex-1"><span class="block font-semibold">6–10 pages</span><span class="block text-sm text-gray-600 dark:text-gray-400">For larger businesses</span></span>
-          <span class="font-semibold text-purple-700 dark:text-purple-300 whitespace-nowrap">+£150</span>
+          <span class="font-semibold text-purple-700 dark:text-purple-300 whitespace-nowrap">+£200</span>
         </label>
         </div>
       </fieldset>
@@ -545,9 +545,9 @@
   <h2 class="text-4xl font-bold mb-4 text-center text-[#17131F] dark:text-white">Book your project</h2>
   <p class="text-center text-gray-600 dark:text-gray-400 max-w-xl mx-auto mb-10">Tell us what you need. We’ll get back to you to arrange a quick call and confirm the details.</p>
 
-  <form id="booking-form" action="https://formspree.io/f/mjgzdynk" method="POST" novalidate
+  <form id="booking-form" action="https://script.google.com/macros/s/AKfycby9fpLNuN3kFcTKTSG-Er5tqdkpMM1M8fgrYpGxGn-BZbSJHs0vFysJQsEe6m_4LasE/exec" method="POST" novalidate
         class="max-w-2xl mx-auto bg-gray-50 dark:bg-[#111111] p-6 sm:p-8 rounded-xl shadow-lg space-y-5 border border-purple-200 dark:border-purple-700">
-    <input type="hidden" name="_subject" value="New project booking — MaiWebStudio">
+    <div aria-hidden="true" style="position:absolute;left:-9999px"><label>Leave this empty <input type="text" name="website_url" tabindex="-1" autocomplete="off"></label></div>
     <div class="grid sm:grid-cols-2 gap-5">
       <div><label for="b-name" class="block text-sm font-semibold mb-1.5">Full name</label><input id="b-name" type="text" name="name" autocomplete="name" required class="w-full p-3 rounded-lg bg-white dark:bg-[#0A0A0A] border border-purple-300 dark:border-purple-700 focus:outline-none focus:border-brand-purple"></div>
       <div><label for="b-email" class="block text-sm font-semibold mb-1.5">Email</label><input id="b-email" type="email" name="email" autocomplete="email" required class="w-full p-3 rounded-lg bg-white dark:bg-[#0A0A0A] border border-purple-300 dark:border-purple-700 focus:outline-none focus:border-brand-purple"></div>
@@ -574,7 +574,8 @@
   </form>
   <div id="form-success" class="hidden max-w-2xl mx-auto text-center bg-gray-50 dark:bg-[#111111] p-8 rounded-xl border border-purple-300 dark:border-purple-700" role="status" tabindex="-1">
     <h3 class="text-2xl font-bold mb-2">Thanks, we’ve got it</h3>
-    <p class="text-gray-600 dark:text-gray-400">We’ll be in touch shortly to arrange a call. If it’s urgent, message us on WhatsApp.</p>
+    <p id="order-ref" class="hidden text-lg font-semibold text-purple-600 dark:text-purple-400 mb-2"></p>
+    <p class="text-gray-600 dark:text-gray-400">Check your inbox: we’ve emailed you a short project brief to fill in. We’ll be in touch shortly to arrange a call. If it’s urgent, message us on WhatsApp.</p>
   </div>
 </section>
 
@@ -582,12 +583,12 @@
   <h2 class="text-4xl font-bold mb-4 text-[#17131F] dark:text-white">Contact us</h2>
   <p class="text-gray-600 dark:text-gray-400 mb-10">Questions first? Get in touch however suits you.</p>
   <div class="max-w-md mx-auto text-left space-y-5">
-    <p class="text-gray-600 dark:text-gray-400"><svg class="w-5 h-5 inline-block align-[-4px] mr-2 text-purple-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2Z"/></svg>Phone: <a href="tel:[YOUR PHONE]" class="text-purple-600 dark:text-purple-400 hover:text-purple-500">[YOUR PHONE]</a></p>
-    <p class="text-gray-600 dark:text-gray-400"><svg class="w-5 h-5 inline-block align-[-4px] mr-2 text-purple-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>Email: <a href="mailto:[YOUR EMAIL]" class="text-purple-600 dark:text-purple-400 hover:text-purple-500">[YOUR EMAIL]</a></p>
-    <p class="text-gray-600 dark:text-gray-400"><svg class="w-5 h-5 inline-block align-[-4px] mr-2 text-purple-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5h.01"/></svg>Instagram: <a href="https://instagram.com/MaiWebStudio" target="_blank" rel="noopener" class="text-purple-600 dark:text-purple-400 hover:text-purple-500">@MaiWebStudio</a></p>
+    <p class="text-gray-600 dark:text-gray-400"><svg class="w-5 h-5 inline-block align-[-4px] mr-2 text-purple-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2Z"/></svg>Phone: <a href="tel:+447810073556" class="text-purple-600 dark:text-purple-400 hover:text-purple-500">07810 073556</a></p>
+    <p class="text-gray-600 dark:text-gray-400"><svg class="w-5 h-5 inline-block align-[-4px] mr-2 text-purple-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>Email: <a href="mailto:mtechsecure81@gmail.com" class="text-purple-600 dark:text-purple-400 hover:text-purple-500">mtechsecure81@gmail.com</a></p>
+    <p class="text-gray-600 dark:text-gray-400"><svg class="w-5 h-5 inline-block align-[-4px] mr-2 text-purple-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5h.01"/></svg>Instagram: <a href="https://instagram.com/maiwebstudio" target="_blank" rel="noopener" class="text-purple-600 dark:text-purple-400 hover:text-purple-500">@maiwebstudio</a></p>
     <div class="flex flex-wrap gap-3 pt-2">
-      <a href="https://wa.me/[YOUR WHATSAPP]" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-5 py-2.5 bg-green-600 hover:bg-green-500 text-white rounded-full transition"><svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 21l2.1-5.6A8.4 8.4 0 1 1 21 11.5Z"/></svg>WhatsApp</a>
-      <a href="tel:[YOUR PHONE]" class="inline-flex items-center gap-2 px-5 py-2.5 bg-purple-600 hover:bg-purple-500 text-white rounded-full transition"><svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2Z"/></svg>Call us</a>
+      <a href="https://wa.me/447810073556" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-5 py-2.5 bg-green-600 hover:bg-green-500 text-white rounded-full transition"><svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 21l2.1-5.6A8.4 8.4 0 1 1 21 11.5Z"/></svg>WhatsApp</a>
+      <a href="tel:+447810073556" class="inline-flex items-center gap-2 px-5 py-2.5 bg-purple-600 hover:bg-purple-500 text-white rounded-full transition"><svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2Z"/></svg>Call us</a>
     </div>
   </div>
 </section>
@@ -615,16 +616,16 @@
       <ul class="space-y-2 text-sm text-gray-600 dark:text-gray-400">
         <li><a href="#maintenance" class="hover:text-brand-purple transition">Maintenance & Hosting</a></li>
         <li><a href="#contact" class="hover:text-brand-purple transition">Contact Us</a></li>
-        <li><a href="tel:[YOUR PHONE]" class="hover:text-brand-purple transition">Call us</a></li>
+        <li><a href="tel:+447810073556" class="hover:text-brand-purple transition">Call us</a></li>
       </ul>
     </div>
 
     <div>
       <h4 class="font-heading font-semibold mb-3 text-purple-700 dark:text-purple-300">Connect</h4>
       <ul class="space-y-2 text-sm text-gray-600 dark:text-gray-400">
-        <li><a href="https://instagram.com/MaiWebStudio" target="_blank" rel="noopener" class="hover:text-brand-purple transition">Instagram — @maiwebstudio</a></li>
-        <li><a href="mailto:[YOUR EMAIL]" class="hover:text-brand-purple transition">mtechsecure81@gmail.com</a></li>
-        <li><a href="https://wa.me/[YOUR WHATSAPP]" target="_blank" rel="noopener" class="hover:text-brand-purple transition">WhatsApp</a></li>
+        <li><a href="https://instagram.com/maiwebstudio" target="_blank" rel="noopener" class="hover:text-brand-purple transition">Instagram — @maiwebstudio</a></li>
+        <li><a href="mailto:mtechsecure81@gmail.com" class="hover:text-brand-purple transition">mtechsecure81@gmail.com</a></li>
+        <li><a href="https://wa.me/447810073556" target="_blank" rel="noopener" class="hover:text-brand-purple transition">WhatsApp</a></li>
       </ul>
     </div>
 
@@ -754,8 +755,13 @@
       }
       var btn=form.querySelector('button[type=submit]'), txt=btn.textContent;
       btn.disabled=true; btn.textContent='Sending…';
-      fetch(form.action,{method:'POST',body:new FormData(form),headers:{Accept:'application/json'}})
-        .then(function(r){ if(!r.ok) throw new Error(); form.classList.add('hidden'); ok.classList.remove('hidden'); ok.focus(); })
+      fetch(form.action,{method:'POST',body:new URLSearchParams(new FormData(form)),headers:{Accept:'application/json'}})
+        .then(function(r){ if(!r.ok) throw new Error(); return r.json().catch(function(){return {};}); })
+        .then(function(d){
+          if(d&&d.ok===false) throw new Error();
+          if(d&&d.order){ var ref=document.getElementById('order-ref'); ref.textContent='Your order number: '+d.order; ref.classList.remove('hidden'); }
+          form.classList.add('hidden'); ok.classList.remove('hidden'); ok.focus();
+        })
         .catch(function(){ err.textContent='Sorry, that didn’t send. Please try again or message us on WhatsApp.'; err.classList.remove('hidden'); })
         .then(function(){ btn.disabled=false; btn.textContent=txt; });
     });
